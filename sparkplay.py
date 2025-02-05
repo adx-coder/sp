@@ -52,6 +52,9 @@ if "otp" not in st.session_state:
 if "otp_verified" not in st.session_state:
     st.session_state.otp_verified = False
 
+
+repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))  # Adjust based on where the code is
+
 # Constants and Paths
 VIDEO_UPLOAD_DIR = "/Users/yuthikaprethika/Documents/GitHub/sp/uploaded_videos"
 CLASSIFIED_VIDEO_DIR = "/Users/yuthikaprethika/Documents/GitHub/sp/classified_videos"
@@ -64,6 +67,7 @@ CATEGORIES = ["Action", "Comedy", "Music"]
 
 # Load the video classification model
 model = load_model(MODEL_PATH)
+print("Loaded")
 
 # Initialize session state
 if "logged_in" not in st.session_state:
