@@ -22,6 +22,9 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col
 from pyspark.sql.types import StringType, StructType, StructField
 
+
+os.environ['JAVA_HOME'] = '/usr/lib/jvm/java-11-openjdk-amd64'
+
 # Initialize Spark Session
 spark = SparkSession.builder \
     .appName("Video Recommendation App") \
